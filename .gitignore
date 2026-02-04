@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+.env
+*.log
+
+# VS Code
+.vscode/
+
+# نظام التشغيل
+.DS_Store
+Thumbs.db
