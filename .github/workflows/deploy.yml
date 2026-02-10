@@ -1,0 +1,30 @@
+name: 🚀 Deploy to Server
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📦 Checkout Code
+      uses: actions/checkout@v3
+      
+    - name: 🔑 Deploy to Server
+      uses: appleboy/ssh-action@v0.1.7
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        port: ${{ secrets.PORT }}
+        script: |
+          cd /root/telegram-seen-bot
+          git pull origin main
+          echo "✅ Deployment completed!"
+          # أضف أوامر إضافية هنا مثل:
+          # pip install -r requirements.txt
+          # systemctl restart your-service
