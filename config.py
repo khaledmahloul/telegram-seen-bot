@@ -28,7 +28,7 @@ TEMPERATURE = 1
 HISTORY_LENGTH = int(os.getenv("HISTORY_LENGTH", "6"))
 
 # اسم النموذج الاحتياطي (يمكن تغييره عبر .env)
-FALLBACK_MODEL = os.getenv("FALLBACK_MODEL", "llama-3.1-70b-versatile")
+FALLBACK_MODEL = os.getenv("FALLBACK_MODEL", "mixtral-8x7b-32768")
 
 # إعدادات المشرفين (ADMIN_ID أو قائمة أسماء المستخدمين مفصولة بفواصل)
 # ادعم ADMIN_ID مفرد أو ADMIN_IDS (قائمة من المعرفات مفصولة بفواصل).
@@ -112,3 +112,4 @@ class ConfigService:
 
 # إنشاء مثيل مُستخدم في باقي المشروع
 config_service = ConfigService()
+
